@@ -219,25 +219,18 @@ food_info_df = pd.DataFrame(foods_dict4)
 
 from pymongo import UpdateOne
 
-def update_mongodb_ratings(db, updated_ratings_df):
-    """
-    Update the ratings in MongoDB with the data from the updated DataFrame.
+from pymongo import UpdateOne
 
-    Args:
-    db (MongoClient['dbName'].collection): The MongoDB collection object.
-    updated_ratings_df (pd.DataFrame): DataFrame containing updated ratings.
-    """
-    # Prepare bulk update operations
+def update_mongodb_ratings(db, updated_ratings_df):
     update_operations = []
     for index, row in updated_ratings_df.iterrows():
         filter_query = {'User_ID': row['User_ID'], 'Food_ID': row['Food_ID']}
         new_values = {"$set": {'Rating': row['Rating']}}
-        update_op = UpdateOne(filter_query, new_values, upsert=True)
+        update_op = UpdateOne(filter_query, new_values, upsert=True)  # Notice the upsert=True here
         update_operations.append(update_op)
 
-    # Perform bulk update
-    result = db.bulk_write(update_operations)
-    return result
+    db.bulk_write(update_operations)
+
 
 # Function to recommend food items using collaborative filtering
 def recommend_food_items(user_id, num_recommendations, predictions_df, original_ratings_df, food_info_df):
