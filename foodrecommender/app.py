@@ -120,19 +120,16 @@ def get_recommendations(title, cosine_sim=cosine_sim):
 
 
 
-# Create dummy features based on ingredient analysis
+
 foods['high_protein'] = foods['Describe'].apply(lambda x: 1 if 'chicken' in x or 'beef' in x or 'lentils' in x else 0)
 foods['high_carb'] = foods['Describe'].apply(lambda x: 1 if 'bread' in x or 'rice' in x or 'pasta' in x else 0)
 
 # Select features and labels
-X = foods[['high_protein', 'high_carb']]  # These are dummy features for demonstration
+X = foods[['high_protein', 'high_carb']] 
 y_protein = foods['high_protein']
 y_carb = foods['high_carb']
 
 
-# Assuming that we have already identified which foods are high in protein and carbs
-# and those columns are named 'high_protein' and 'high_carb' respectively
-# For the sake of this example, let's create dummy data for these columns
 
 
 # Function to suggest top 5 foods based on protein and carb combination
@@ -165,9 +162,16 @@ from pymongo.server_api import ServerApi
 import pandas as pd
 import numpy as np
 from scipy.sparse.linalg import svds
+from dotenv import load_dotenv
+import os
 
+# Load environment variables from .env file
+load_dotenv()
+
+# Now you can use the environment variable
+uri = os.getenv('MONGODB_URI')
 # MongoDB Atlas connection URI
-uri = "mongodb+srv://kzaidnba:EuL9aQQpoN35onPO@cluster0.m6hepyg.mongodb.net/?retryWrites=true&w=majority"
+
 
 # Create a new client and connect to the server
 client = MongoClient(uri, server_api=ServerApi('1'))
@@ -264,7 +268,7 @@ def recommend_food_items(user_id, num_recommendations, predictions_df, original_
 
 
 
-# Load your data (replace 'path_to_file' with your file path)
+
 
 
 # Aggregating the ratings by taking the mean for each user-food pair
