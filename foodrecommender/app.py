@@ -199,8 +199,23 @@ import numpy as np
 from scipy.sparse.linalg import svds
 
 
-foods_dict4=pickle.load(open('food_dictfinalcollab.pkl','rb'))
-food_info_df=pd.DataFrame(foods_dict4)
+import os
+
+# Get the absolute path to the directory where your app.py is located
+absolute_path = os.path.abspath(os.path.dirname(__file__))
+
+# Define the path to your pickle file using an absolute path
+food_dict_collab_path = os.path.join(absolute_path, 'food_dictfinalcollab.pkl')
+
+import pickle
+import pandas as pd
+
+# Load the pickle file using the absolute path
+foods_dict4 = pickle.load(open(food_dict_collab_path, 'rb'))
+
+# Convert foods_dict4 to a DataFrame
+food_info_df = pd.DataFrame(foods_dict4)
+
 # Function to recommend food items using collaborative filtering
 def recommend_food_items(user_id, num_recommendations, predictions_df, original_ratings_df, food_info_df):
     # Ensure 'Food_ID' is a column in original_ratings_df
