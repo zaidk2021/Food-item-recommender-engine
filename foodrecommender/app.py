@@ -221,6 +221,8 @@ from pymongo import UpdateOne
 
 from pymongo import UpdateOne
 
+from pymongo import UpdateOne
+
 def update_mongodb_ratings(db, updated_ratings_df):
     update_operations = []
     for index, row in updated_ratings_df.iterrows():
@@ -229,7 +231,12 @@ def update_mongodb_ratings(db, updated_ratings_df):
         update_op = UpdateOne(filter_query, new_values, upsert=True)  # Notice the upsert=True here
         update_operations.append(update_op)
 
-    db.bulk_write(update_operations)
+    try:
+        db.bulk_write(update_operations)
+    except Exception as e:
+        print("An error occurred while updating MongoDB:", e)
+
+
 
 
 # Function to recommend food items using collaborative filtering
