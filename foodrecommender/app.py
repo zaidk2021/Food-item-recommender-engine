@@ -163,7 +163,6 @@ import pandas as pd
 import numpy as np
 from scipy.sparse.linalg import svds
 
-
 # MongoDB Atlas connection URI
 uri = "mongodb+srv://kzaidnba:EuL9aQQpoN35onPO@cluster0.m6hepyg.mongodb.net/?retryWrites=true&w=majority"
 
