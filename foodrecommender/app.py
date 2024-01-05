@@ -162,16 +162,10 @@ from pymongo.server_api import ServerApi
 import pandas as pd
 import numpy as np
 from scipy.sparse.linalg import svds
-from dotenv import load_dotenv
-import os
 
-# Load environment variables from .env file
-load_dotenv()
 
-# Now you can use the environment variable
-uri = os.getenv('MONGODB_URI')
 # MongoDB Atlas connection URI
-
+uri = "mongodb+srv://kzaidnba:EuL9aQQpoN35onPO@cluster0.m6hepyg.mongodb.net/?retryWrites=true&w=majority"
 
 # Create a new client and connect to the server
 client = MongoClient(uri, server_api=ServerApi('1'))
