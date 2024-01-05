@@ -35,7 +35,7 @@ indices = pd.Series(foods.index, index=foods['Name']).drop_duplicates()
 
 current_size = len(rating_matrix)
 rows_to_add = 400 - current_size
-
+db_password = "EuL9aQQpoN35onPO"
 # Check if rows need to be added
 if rows_to_add > 0:
     
@@ -378,7 +378,7 @@ st.subheader("Update User Rating")
 update_user = st.number_input('User ID for Rating Update:', min_value=1, step=1)
 update_food_name = st.selectbox('Select Food for Rating Update:', foods['Name'].values)
 new_rating = st.slider('New Rating:', 0.0, 10.0, 3.5)
-db_password = "EuL9aQQpoN35onPO"
+
 if st.button('Update Rating'):
     # Find the corresponding Food ID
     update_food_id = foods[foods['Name'] == update_food_name].index[0]+1
