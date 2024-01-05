@@ -11,9 +11,15 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report
 
 
+import os
+absolute_path = os.path.abspath(os.path.dirname(__file__))
+pickle_file_path = os.path.join(absolute_path, 'food_dict.pkl')
 
 
-foods_dict=pickle.load(open('food_dict.pkl','rb'))
+
+
+import pickle
+foods_dict = pickle.load(open(pickle_file_path, 'rb'))
 foods=pd.DataFrame(foods_dict)
 cosine_sim=pickle.load(open('cosin_sim.pkl','rb'))
 rx=pickle.load(open('rating_matrix1.pkl','rb'))
