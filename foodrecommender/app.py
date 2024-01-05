@@ -378,7 +378,7 @@ new_rating = st.slider('New Rating:', 0.0, 10.0, 3.5)
 
 if st.button('Update Rating'):
     # Find the corresponding Food ID
-    update_food_id = foods[foods['Name'] == update_food_name].index[0]
+    update_food_id = foods[foods['Name'] == update_food_name].index[0]+1
 
     # Update the rating using the Food ID
     data_2, updated_preds = update_user_rating(update_user, update_food_id, new_rating, ratings_df=data_2, cf_model_k=50)
