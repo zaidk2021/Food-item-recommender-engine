@@ -32,13 +32,13 @@ userratingdf=pd.DataFrame(ux)
 # Just considering the Food names from the dataframe
 indices = pd.Series(foods.index, index=foods['Name']).drop_duplicates()
 
-# Assuming 'rating_matrix' is your original DataFrame
+
 current_size = len(rating_matrix)
 rows_to_add = 400 - current_size
 
 # Check if rows need to be added
 if rows_to_add > 0:
-    # Assuming your DataFrame columns are labeled as in your example (1.0, 2.0, ..., 100.0)
+    
     columns = rating_matrix.columns
     # Create a DataFrame with additional rows filled with zeros (or NaN if preferred)
     additional_rows = pd.DataFrame(np.zeros((rows_to_add, len(columns))), columns=columns)
