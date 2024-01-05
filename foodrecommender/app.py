@@ -338,7 +338,7 @@ def update_user_rating(user_id, food_id, new_rating, ratings_df, cf_model_k):
 # Initialize predictions_df with cf_preds_df
 predictions_df = cf_preds_df
 # Streamlit Interface
-st.title('Food Item Recommender Engine')
+st.title('Food Item Recommender Engine-Zaid Khan')
 
 # Content-based recommendation
 st.subheader("Content-based Recommendation")
