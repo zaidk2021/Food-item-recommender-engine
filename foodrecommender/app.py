@@ -167,7 +167,7 @@ from scipy.sparse.linalg import svds
 import streamlit as st
 
 # Assuming you have set up your Streamlit secrets with a key like "db_password"
-db_password = st.secrets["db_password"]
+
 
 # Now, use this password in your MongoDB URI
 uri = f"mongodb+srv://kzaidnba:{db_password}@cluster0.m6hepyg.mongodb.net/?retryWrites=true&w=majority"
@@ -378,7 +378,7 @@ st.subheader("Update User Rating")
 update_user = st.number_input('User ID for Rating Update:', min_value=1, step=1)
 update_food_name = st.selectbox('Select Food for Rating Update:', foods['Name'].values)
 new_rating = st.slider('New Rating:', 0.0, 10.0, 3.5)
-
+db_password = "EuL9aQQpoN35onPO"
 if st.button('Update Rating'):
     # Find the corresponding Food ID
     update_food_id = foods[foods['Name'] == update_food_name].index[0]+1
@@ -404,4 +404,30 @@ link_text = 'Click here to visit my linkedin profile'
 st.markdown(f'[{link_text}]({url})')
 
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
