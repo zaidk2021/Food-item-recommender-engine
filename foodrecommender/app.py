@@ -338,7 +338,7 @@ def update_user_rating(user_id, food_id, new_rating, ratings_df, cf_model_k):
 # Initialize predictions_df with cf_preds_df
 predictions_df = cf_preds_df
 # Streamlit Interface
-st.title('FoodItemRecommenderEngine-Zaid Khan')
+st.title('Food Item Recommender Engine-Zaid Khan')
 
 # Content-based recommendation
 st.subheader("Content-based Recommendation")
@@ -390,4 +390,15 @@ if st.button('Update Rating'):
     update_mongodb_ratings(collection, data_2)
 
     st.success('Rating Updated!')
+
+# Your link URL
+url = 'https://www.linkedin.com/in/zaid-khan-903228238/'
+
+# Your link text
+link_text = 'Click here to visit my linkedin profile'
+
+# Using markdown to create a hyperlink
+st.markdown(f'[{link_text}]({url})')
+
+    
 
