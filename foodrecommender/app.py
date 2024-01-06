@@ -154,8 +154,6 @@ def suggest_foods(df, protein_status, carb_status):
 
     filtered_df = df[protein_filter & carb_filter]
     return filtered_df[['Name']].head(5)
-from dotenv import load_dotenv
-load_dotenv()
 
 
 from pymongo.mongo_client import MongoClient
