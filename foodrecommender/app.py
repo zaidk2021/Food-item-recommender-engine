@@ -363,13 +363,13 @@ if st.button('Recommend Similar Foods'):
 
 # Recommendation by ingredient
 st.subheader("Recommendation by Ingredient")
-ingredient = st.text_input('Enter an ingredient to avoid:')
+ingredient = st.text_input('Enter the ingredient:')
 if st.button('Recommend Foods With Ingredient'):
     recommendations = recommend_by_that_ingredient(ingredient, foods)
     st.write(recommendations)
 
 # Suggest foods based on protein and carb
-st.subheader("Suggest Foods Based on Protein and Carb")
+st.subheader("Suggest Foods Based on Protein and Carb(For gym and fitness freaks)")
 protein_status = st.selectbox('Select Protein Status:', ['high', 'low'])
 carb_status = st.selectbox('Select Carb Status:', ['high', 'low'])
 if st.button('Suggest Foods'):
@@ -379,13 +379,13 @@ if st.button('Suggest Foods'):
 # Collaborative filtering recommendation
 st.subheader("Collaborative Filtering Recommendation")
 user_id = st.number_input('Enter User ID:', min_value=1, step=1)
-num_recommendations = st.slider('Number of Recommendations:', 1, 10, 5)
+num_recommendations = st.slider('Number of Recommendations(on the basis of similarity btw users):', 1, 10, 5)
 if st.button('Get Recommendations'):
     recommendations = recommend_food_items(user_id, num_recommendations, predictions_df, original_ratings_df=data_2, food_info_df=food_info_df)
     st.write(recommendations)
 
 # Streamlit Interface for Updating User Ratings
-st.subheader("Update User Rating")
+st.subheader("Update User-Food Rating")
 update_user = st.number_input('User ID for Rating Update:', min_value=1, step=1)
 update_food_name = st.selectbox('Select Food for Rating Update:', foods['Name'].values)
 new_rating = st.slider('New Rating:', 0.0, 10.0, 3.5)
