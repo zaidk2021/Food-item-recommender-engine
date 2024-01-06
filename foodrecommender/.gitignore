@@ -1,7 +1,7 @@
 # .gitignore file
 
 # Ignore environment variables
-#.env
+.env
 
 # Ignore everything in the venv directory
 venv/
