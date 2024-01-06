@@ -179,16 +179,16 @@ import streamlit as st
 #import streamlit as st
 
 # Access the database connection string from Streamlit's secrets
-#db_conn_string = st.secrets["DB_CONN_STRING"]
+db_conn_string = st.secrets["DB_CONN_STRING"]
 
 # Rest of your code to use this connection string
-#uri=db_conn_string
+uri=db_conn_string
 
 
 
 # Now, use this password in your MongoDB URI
 #uri = mongodb_uri
-uri="mongodb+srv://kzaidnba:EuL9aQQpoN35onPO@cluster0.m6hepyg.mongodb.net/?retryWrites=true&w=majority"
+#uri="mongodb+srv://kzaidnba:EuL9aQQpoN35onPO@cluster0.m6hepyg.mongodb.net/?retryWrites=true&w=majority"
 
 
 # Create a new client and connect to the server
