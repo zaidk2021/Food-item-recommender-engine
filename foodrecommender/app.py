@@ -166,20 +166,22 @@ from scipy.sparse.linalg import svds
 import streamlit as st
 
 # Assuming you have set up your Streamlit secrets with a key like "db_password"
-from dotenv import load_dotenv
-import os
+#from dotenv import load_dotenv
+#import os
 
 # Load environment variables
-load_dotenv()
+#load_dotenv()
 
 # Access MONGODB_URI
-mongodb_uri = os.environ.get("MONGODB_URI")
+#mongodb_uri = os.environ.get("MONGODB_URI")
 
 
 
 
 # Now, use this password in your MongoDB URI
-uri = mongodb_uri
+#uri = mongodb_uri
+uri="mongodb+srv://kzaidnba:EuL9aQQpoN35onPO@cluster0.m6hepyg.mongodb.net/?retryWrites=true&w=majority"
+
 
 # Create a new client and connect to the server
 client = MongoClient(uri, server_api=ServerApi('1'))
