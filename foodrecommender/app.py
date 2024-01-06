@@ -154,7 +154,8 @@ def suggest_foods(df, protein_status, carb_status):
 
     filtered_df = df[protein_filter & carb_filter]
     return filtered_df[['Name']].head(5)
-
+from dotenv import load_dotenv
+load_dotenv()
 
 
 from pymongo.mongo_client import MongoClient
@@ -167,10 +168,20 @@ from scipy.sparse.linalg import svds
 import streamlit as st
 
 # Assuming you have set up your Streamlit secrets with a key like "db_password"
+from dotenv import load_dotenv
+import os
+
+# Load environment variables
+load_dotenv()
+
+# Access MONGODB_URI
+mongodb_uri = os.environ.get("MONGODB_URI")
+
+
 
 
 # Now, use this password in your MongoDB URI
-uri = f"mongodb+srv://kzaidnba:{db_password}@cluster0.m6hepyg.mongodb.net/?retryWrites=true&w=majority"
+uri = mongodb_uri
 
 # Create a new client and connect to the server
 client = MongoClient(uri, server_api=ServerApi('1'))
