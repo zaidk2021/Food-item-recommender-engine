@@ -369,7 +369,9 @@ if st.button('Recommend Foods With Ingredient'):
     st.write(recommendations)
 
 # Suggest foods based on protein and carb
-st.subheader("Suggest Foods Based on Protein and Carb(For gym and fitness freaks)")
+st.subheader("Suggest Foods Based on Protein and Carb")
+st.markdown('## For gym and fitness freaks')
+
 protein_status = st.selectbox('Select Protein Status:', ['high', 'low'])
 carb_status = st.selectbox('Select Carb Status:', ['high', 'low'])
 if st.button('Suggest Foods'):
