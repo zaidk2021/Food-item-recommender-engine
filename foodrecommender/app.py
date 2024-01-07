@@ -289,7 +289,8 @@ def recommend_food_items(user_id, num_recommendations, predictions_df, original_
 
 
 # Aggregating the ratings by taking the mean for each user-food pair
-agg_ratings = data_2.groupby(['User_ID', 'Food_ID']).mean().reset_index()
+grouped_data = data_2.groupby(['User_ID', 'Food_ID'])
+agg_ratings = grouped_data.mean().reset_index()
 
 # Creating the pivot table
 pivot_table = agg_ratings.pivot(index='User_ID', columns='Food_ID', values='Rating').fillna(0)
