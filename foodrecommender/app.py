@@ -281,7 +281,7 @@ def recommend_food_items(user_id, num_recommendations, predictions_df, original_
     # Merge with the food_info_df to get food names
     recommendations = recommendations.merge(food_info_df, how='left', on='Food_ID')
     #return recommendations[['Name', 'PredictedRating']]
-    return recommendations[['Name']]
+    return recommendations['Name']
 
 
 
