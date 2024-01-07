@@ -414,10 +414,10 @@ if st.button('Update Rating'):
 
     st.success('Rating Updated!')
 
-# Your link URL
+
 url = 'https://www.linkedin.com/in/zaid-khan-903228238/'
 
-# Your link text
+
 link_text = 'Click here to visit my linkedin profile'
 
 # Using markdown to create a hyperlink
