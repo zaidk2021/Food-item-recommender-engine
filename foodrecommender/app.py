@@ -179,7 +179,7 @@ import streamlit as st
 #import streamlit as st
 
 # Access the database connection string from Streamlit's secrets
-db_conn_string = st.secrets["DB_CONN_STRING"]
+db_conn_string = st.secrets["DB_CON_STRING"]
 
 # Rest of your code to use this connection string
 uri=db_conn_string
