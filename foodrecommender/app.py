@@ -35,7 +35,7 @@ indices = pd.Series(foods.index, index=foods['Name']).drop_duplicates()
 
 current_size = len(rating_matrix)
 rows_to_add = 400 - current_size
-db_password = "EuL9aQQpoN35onPO"
+
 # Check if rows need to be added
 if rows_to_add > 0:
     
