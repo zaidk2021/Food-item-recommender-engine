@@ -288,6 +288,7 @@ def recommend_food_items(user_id, num_recommendations, predictions_df, original_
 
 
 
+
 # Aggregating the ratings by taking the mean for each user-food pair
 grouped_data = data_2.groupby(['User_ID', 'Food_ID'])
 agg_ratings = grouped_data.mean().reset_index()
